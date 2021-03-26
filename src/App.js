@@ -43,7 +43,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="main-div">
+      <div>
         <Navbar handleLogout={handleLogout} currentUser={currentUser} />
         
         <Route exact path="/" 

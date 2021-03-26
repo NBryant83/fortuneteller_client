@@ -45,13 +45,18 @@ export default function Profile(props) {
   }, [props]);
 
   const newArray = quotes.map((quote, idx) => {
-    return <li>{quote.quote}</li>;
+    return (
+      <li key={idx} className="list-item">
+        {quote.quote} <br />
+        {new Date(quote.date).toLocaleString()}
+      </li>
+    );
   });
   return (
     <div className="profile">
       <h4>Hello {props.currentUser.username}. I was expecting you.</h4>
 
-      <ul>{newArray}</ul>
+      <ul className="list">{newArray}</ul>
     </div>
   );
 }
