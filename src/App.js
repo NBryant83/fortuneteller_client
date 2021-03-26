@@ -45,7 +45,15 @@ const App = () => {
     <Router>
       <div className="main-div">
         <Navbar handleLogout={handleLogout} currentUser={currentUser} />
-        <Route exact path="/" component={Home} />
+        
+        <Route exact path="/" 
+          render={(props) => (
+            <Home
+              {...props}
+              setCurrentUser={setCurrentUser}
+              currentUser={currentUser}
+            />
+          )}/>
 
         {/* ROUTE TO PROFILE */}
         <Route

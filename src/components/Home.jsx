@@ -6,7 +6,7 @@ export default function Home(props) {
   return (
     <div className="home">
       <h4 className="opening-banner">Madame's Parlor of Fortune</h4>
-      <Register />
+      <Register currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} />
       <img src={madame} className="hands-img" />
     </div>
   );

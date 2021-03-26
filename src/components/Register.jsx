@@ -25,18 +25,21 @@ export default function Register(props) {
 
       const { token } = response.data;
       localStorage.setItem("jwtToken", token);
+      // console.log(token)
 
       const decoded = jwt_decode(token);
+      console.log(decoded)
 
       props.setCurrentUser(decoded);
     } catch (error) {
       console.log(error);
-      if (error.response.status === 400) {
-        console.log(error.response);
-        setMessage(error.response.data.msg);
-      } else {
-        console.log(error);
-      }
+      console.log(props);
+      // if (error.response.status === 400) {
+      //  // console.log(error.response);
+      //   setMessage(error.response.data.msg);
+      // } else {
+      //   console.log(error);
+      // }
     }
   };
 

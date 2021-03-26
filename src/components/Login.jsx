@@ -30,7 +30,7 @@ export default function Login(props) {
       );
       // console.log(response);
       const { token } = response.data;
-      console.log(token);
+      //console.log(token);
       localStorage.setItem("jwtToken", token);
 
       const decoded = jwt_decode(token);
